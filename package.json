@@ -11,14 +11,23 @@
         "Other"
     ],
     "activationEvents": [
-        "onCommand:extension.sayHello"
+        "onCommand:extension.CreateClass"
     ],
     "main": "./extension",
     "contributes": {
         "commands": [{
-            "command": "extension.sayHello",
-            "title": "Hello World"
-        }]
+            "command": "extension.CreateClass",
+            "title": "Create Class",
+            "category": "C++ Templates"
+        }],
+        "menus": {
+            "explorer/context": [
+                {
+                    "command": "extension.CreateClass",
+                    "group": "RettGroup@1"
+                }
+            ]
+        }
     },
     "scripts": {
         "postinstall": "node ./node_modules/vscode/bin/install",
